@@ -4,7 +4,9 @@ public class StringCalculator {
 
 	public int Add(String numbers)
 	{
-		String[] str = numbers.split(",|\n");  
+		
+		String[] str = numbers.split(",");
+		String delimiter = ",";
 		if(numbers.isEmpty())
 		{
 			return 0;
@@ -16,13 +18,27 @@ public class StringCalculator {
 		}
 		else
 		{
-			return getSum(str[0],str[1]);
+			String[] numList = split(numbers, delimiter + "|\n");
+            return getSum(numList);
 		}
 	}
 	
-	private int getSum(String num1, String num2)
+	private String[] split(String numbers, String div) {
+        return numbers.split(div);
+    }
+	
+	private int getSum(String[] num)
 	{
-		return Integer.parseInt(num1)+Integer.parseInt(num2);
+		int totalsum = 0;
+        for (String number : num) 
+        {
+        	
+	            if (StringtoInt(number) < 1000)
+	                totalsum += StringtoInt(number);
+	    }
+
+
+	        return totalsum;
 	}
 	
 	private boolean isEmpty(String numbers)
@@ -34,5 +50,6 @@ public class StringCalculator {
 	{
 		return Integer.parseInt(numbers);
 	}
+	
 
 }

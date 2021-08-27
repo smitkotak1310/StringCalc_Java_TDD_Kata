@@ -17,5 +17,11 @@ public class TestingStingCalculator {
 		assertEquals(3, strcalc.Add("1,2"));
 	}
 	
+	@Test
+	public void handleunknown()
+	{
+		assertEquals(45, strcalc.Add("1,2,3,4,5,6,7,8,9"));
+	}
+	
 	
 }
