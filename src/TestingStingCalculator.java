@@ -23,5 +23,11 @@ public class TestingStingCalculator {
 		assertEquals(45, strcalc.Add("1,2,3,4,5,6,7,8,9"));
 	}
 	
+	@Test
+	public void newLineAsValidDelimiter()
+	{
+		assertEquals(6,strcalc.Add("1\n2,3"));
+	}
+	
 	
 }
