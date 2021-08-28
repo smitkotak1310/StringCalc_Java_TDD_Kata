@@ -5,7 +5,7 @@ public class StringCalculator {
 	public int Add(String numbers)
 	{
 		
-		String[] str = numbers.split(",");
+		//String[] str = numbers.split(",");
 		String delimiter = ",";
 		if(numbers.isEmpty())
 		{
@@ -13,7 +13,7 @@ public class StringCalculator {
 		}
 		if(numbers.length()==1)
 		{
-
+			
 			return StringtoInt(numbers);
 		}
 		else
@@ -38,11 +38,9 @@ public class StringCalculator {
 		int totalsum = 0;
         for (String number : num) 
         {
-        	
-	           totalsum += StringtoInt(number);
+        	if(StringtoInt(number)<1000)
+        	totalsum += StringtoInt(number);
 	    }
-
-
 	        return totalsum;
 	}
 	

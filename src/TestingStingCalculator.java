@@ -35,5 +35,9 @@ public class TestingStingCalculator {
 		assertEquals(3, strcalc.Add("//;\n1;2"));
 	}
 	
-	
+	@Test
+	public void GreaterThn1000Ignore()
+	{
+		assertEquals(2, strcalc.Add("2,1001"));
+	}
 }
