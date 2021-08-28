@@ -18,6 +18,12 @@ public class StringCalculator {
 		}
 		else
 		{
+			
+			if (numbers.matches("//(.*)\n(.*)")) 
+			{
+                delimiter = Character.toString(numbers.charAt(2));
+                numbers = numbers.substring(4);
+            }
 			String[] numList = split(numbers, delimiter + "|\n");
             return getSum(numList);
 		}
@@ -33,8 +39,7 @@ public class StringCalculator {
         for (String number : num) 
         {
         	
-	            if (StringtoInt(number) < 1000)
-	                totalsum += StringtoInt(number);
+	           totalsum += StringtoInt(number);
 	    }
 
 
@@ -50,6 +55,7 @@ public class StringCalculator {
 	{
 		return Integer.parseInt(numbers);
 	}
+	
 	
 
 }

@@ -29,5 +29,11 @@ public class TestingStingCalculator {
 		assertEquals(6,strcalc.Add("1\n2,3"));
 	}
 	
+	@Test
+	public void allowCustomDelimeterinsideString()
+	{
+		assertEquals(3, strcalc.Add("//;\n1;2"));
+	}
+	
 	
 }
