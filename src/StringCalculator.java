@@ -36,12 +36,26 @@ public class StringCalculator {
 	private int getSum(String[] num)
 	{
 		int totalsum = 0;
+		StringBuilder negative = new StringBuilder();
         for (String number : num) 
         {
+        	if (StringtoInt(number) < 0) {
+                if (negative.toString().equals(""))
+                    negative = new StringBuilder(number);
+                else
+                    negative.append(",").append(number);
+            }
+                
         	if(StringtoInt(number)<1000)
         	totalsum += StringtoInt(number);
 	    }
-	        return totalsum;
+        
+        if (!negative.toString().equals(""))
+        {
+            throw new IllegalArgumentException("Negatives not allowed: " + negative);
+        }
+        
+	    return totalsum;
 	}
 	
 	private boolean isEmpty(String numbers)

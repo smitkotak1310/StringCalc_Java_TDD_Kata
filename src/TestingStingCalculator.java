@@ -40,4 +40,18 @@ public class TestingStingCalculator {
 	{
 		assertEquals(2, strcalc.Add("2,1001"));
 	}
+	
+	@Test
+	public void NegativeNumbersException()
+	{
+		try 
+		{
+			strcalc.Add("-1,-2,3");
+			fail("Exception expected.");
+		}
+		catch(RuntimeException e)
+		{
+			assertEquals("Negatives not allowed: -1,-2", e.getMessage());
+		}
+	}
 }
